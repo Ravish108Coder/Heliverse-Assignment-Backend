@@ -37,8 +37,6 @@ router.get('/', async(req, res)=>{
 router.get('/:id', async(req, res)=>{
     try {
         const {id} = req.params
-        // console.log('hi')
-        // const id = "660e809a09120fab12d97581"
         const team = await Team.findOne({_id: id})
         console.log(team)
         if(!team){
