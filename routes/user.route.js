@@ -88,7 +88,7 @@ router.put('/:id', async(req, res)=>{
         const {id} = req.params
         const {first_name, last_name, email, domain, gender, available} = req.body
         const availability = available === 'True' ? true : false
-        const user = await User.findById({_id: String(id)})
+        const user = await User.findOne({_id: String(id)})
         if(!user){
             return res.status(404).json({message: 'User not found'})
         }
